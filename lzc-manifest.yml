@@ -7,11 +7,10 @@ application:
   upstreams:
     - location: /
       backend: http://beaverhabits:8080/
-
 services:
   beaverhabits:
-    # upstream: daya0576/beaverhabits:0.4.6
-    image: docker.1ms.run/daya0576/beaverhabits:0.4.6
+    # upstream: daya0576/beaverhabits:0.10.0
+    image: docker.1ms.run/daya0576/beaverhabits:0.10.0
     environment:
       - HABITS_STORAGE=USER_DISK
       - TRUSTED_LOCAL_EMAIL=admin@${LAZYCAT_BOX_DOMAIN}
@@ -20,6 +19,6 @@ services:
     binds:
       - /lzcapp/var/data:/app/.user/
     setup_script: |
-        if [ ! -d /app/.user ]; then
-         mkdir -p /app/.user
-        fi
+      if [ ! -d /app/.user ]; then
+       mkdir -p /app/.user
+      fi

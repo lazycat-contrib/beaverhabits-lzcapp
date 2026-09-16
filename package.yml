@@ -1,5 +1,5 @@
 package: cloud.lazycat.app.beaverhabits
-version: 0.4.6
+version: 0.10.0
 name: Beaver Habit Tracker
 description: "一个无需“目标”的自托管习惯追踪应用"
 min_os_version: "1.5.0"
