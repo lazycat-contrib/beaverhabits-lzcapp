@@ -1,0 +1,40 @@
+version: 1
+
+project:
+  root: .
+  build_config: lzc-build.yml
+  package_file: package.yml
+  output: .lazycat-build/beaverhabits.lpk
+  target_arch: amd64
+
+update:
+  strategy: publish
+  allow_downgrade: false
+  version_source:
+    type: image
+    image: beaverhabits
+
+build:
+  run_buildscript: false
+
+images:
+  # 上游有完整三段 SemVer tag（0.4.6 ~ 0.9.1），排除 latest/nightly/rc/hotfix/sha 等家族
+  - id: beaverhabits
+    target: service
+    service: beaverhabits
+    source: daya0576/beaverhabits
+    channel: stable
+    sort: semver
+    tag_regex: '^v?\d+\.\d+\.\d+$'
+    delivery:
+      mode: mirror
+
+stores:
+  official:
+    # Official store publication is intentionally disabled; publish only to Miaomiao Store.
+    enabled: false
+  private:
+    enabled: true
+    skip_if_version_exists: true
+    name: Beaver Habit Tracker
+    summary: "无需目标的自我托管习惯追踪应用"

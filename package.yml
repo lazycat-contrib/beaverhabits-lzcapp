@@ -1,0 +1,14 @@
+package: cloud.lazycat.app.beaverhabits
+version: 0.4.6
+name: Beaver Habit Tracker
+description: "一个无需“目标”的自托管习惯追踪应用"
+min_os_version: "1.5.0"
+homepage: https://github.com/daya0576/beaverhabits
+author: daya0576
+locales:
+  zh:
+    description: "一个无需“目标”的自托管习惯追踪应用"
+    name: Beaver Habit Tracker
+  en:
+    description: "A self-hosted habit tracking app without goals"
+    name: Beaver Habit Tracker

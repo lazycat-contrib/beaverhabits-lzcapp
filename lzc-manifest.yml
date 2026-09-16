@@ -1,24 +1,17 @@
-lzc-sdk-version: "0.1"
-name: Beaver Habit Tracker
-package: cloud.lazycat.app.beaverhabits
-version: 0.4.6
-description: 一个无需“目标”的自托管习惯追踪应用程序
-homepage: https://github.com/daya0576/beaverhabits
-author: daya0576
 application:
   subdomain: beaverhabits
   background_task: true
   multi_instance: false
-  gpu_accel: false
-  kvm_accel: false
-  usb_accel: false
   public_path:
     - /
-  routes:
-    - /=http://beaverhabits:8080/
+  upstreams:
+    - location: /
+      backend: http://beaverhabits:8080/
+
 services:
   beaverhabits:
-    image: docker.hlmirror.com/daya0576/beaverhabits:latest
+    # upstream: daya0576/beaverhabits:0.4.6
+    image: docker.1ms.run/daya0576/beaverhabits:0.4.6
     environment:
       - HABITS_STORAGE=USER_DISK
       - TRUSTED_LOCAL_EMAIL=admin@${LAZYCAT_BOX_DOMAIN}
