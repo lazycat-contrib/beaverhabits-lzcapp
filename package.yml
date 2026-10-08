@@ -1,4 +1,5 @@
 package: cloud.lazycat.app.beaverhabits
+license: BSD-3-Clause
 version: 0.10.0
 name: Beaver Habit Tracker
 description: "一个无需“目标”的自托管习惯追踪应用"
