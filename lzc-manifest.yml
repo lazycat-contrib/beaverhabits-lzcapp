@@ -9,8 +9,8 @@ application:
       backend: http://beaverhabits:8080/
 services:
   beaverhabits:
-    # upstream: daya0576/beaverhabits:0.10.0
-    image: docker.1ms.run/daya0576/beaverhabits:0.10.0
+    # upstream: daya0576/beaverhabits:0.10.1
+    image: docker.1ms.run/daya0576/beaverhabits:0.10.1
     environment:
       - HABITS_STORAGE=USER_DISK
       - TRUSTED_LOCAL_EMAIL=admin@${LAZYCAT_BOX_DOMAIN}
